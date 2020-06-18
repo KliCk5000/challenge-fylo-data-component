@@ -6,10 +6,12 @@ body {
   font-family: "Raleway", sans-serif;
   background-image: url(./images/bg-mobile.svg);
   background-repeat: no-repeat;
+  background-color: hsl(229, 57%, 11%);
   margin: 0px;
   padding: 25px;
-  max-width: 375px;
+  min-width: 370px;
 }
+
 .fylo {
   height: 600px;
   display: flex;
@@ -34,11 +36,8 @@ body {
   border-radius: 10px 100px 10px 10px;
   padding: 40px;
   padding-right: 100px;
-  max-width: 330px;
+  min-width: 330px;
   margin: 10px 0;
-}
-
-.header-logo {
 }
 
 .header-menu {
@@ -57,6 +56,11 @@ body {
   border-radius: 10px;
 }
 
+.icon:hover {
+  background-color: hsl(229, 56%, 16%);
+  cursor: pointer;
+}
+
 .icon img {
   max-width: 50%;
 }
@@ -73,6 +77,7 @@ body {
   position: relative;
   color: hsl(243, 100%, 93%);
   margin: 10px 0;
+  min-width: 330px;
 }
 
 .data-remaining-description {
@@ -159,4 +164,52 @@ body {
 
 .attribution a {
   color: lightblue;
+}
+
+@media only screen and (min-width: 375px) {
+  body {
+    background-image: url(./images/bg-desktop.svg);
+    background-position: left bottom;
+  }
+
+  .fylo {
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .fylo {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .header {
+    margin-top: -100px;
+    margin-right: 30px;
+  }
+
+  .data {
+    margin-top: -60px;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .data-remaining-alert {
+    right: 20px;
+    top: -57px;
+    bottom: 0;
+  }
+
+  .data-remaining-alert:after {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    right: 0px;
+    bottom: -20px;
+    border: 20px solid;
+    border-color: hsl(243, 100%, 93%) hsl(243, 100%, 93%) transparent
+      transparent;
+  }
 }
